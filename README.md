@@ -2,7 +2,7 @@
 
 ## Description
 
-**8Puzzle_BidirectionalBFS** is a Go-based application that solves the classic 8-puzzle problem using **bidirectional breadth-first search (BFS)**. The application provides both a command-line solver and a graphical user interface (GUI) using the **Fyne** framework.
+**8Puzzle_BidirectionalBFS** is a Go-based application that solves the classic 8-puzzle problem using **bidirectional breadth-first search (BFS)**.
 
 ## Features
 
@@ -34,31 +34,11 @@ go mod tidy
 
 ## Running the Application
 
-### Command-Line Execution
-
-To run the solver in terminal mode:
-
-```sh
-go run main.go
-```
-
-### Running the GUI
-
-To launch the graphical interface:
-
 ```sh
 go run gui.go
 ```
 
 ## Usage
-
-### Command-Line Mode
-
-1. The program initializes a starting board.
-2. Uses **bidirectional BFS** to find the shortest path to the goal state.
-3. Outputs the sequence of moves.
-
-### GUI Mode
 
 1. Choose to **start a new game** (random or custom board).
 2. Click **Start** to begin solving.
@@ -69,7 +49,7 @@ go run gui.go
 ### Bidirectional BFS Algorithm
 
 The program:
-- Starts two simultaneous BFS searches: one from the initial board and one from the goal state.
+- Starts two simultaneous BFS searches using go routines (threads): one from the initial board and one from the goal state.
 - If the two searches meet, the solution path is reconstructed.
 - The search reduces time complexity compared to traditional BFS.
 
@@ -84,21 +64,3 @@ Example:
 4 5 6
 7 8 0
 ```
-
-### GUI Implementation
-
-The graphical interface:
-- Uses **Fyne** to display the puzzle.
-- Animates each move.
-- Allows interaction through buttons.
-
-## Future Improvements
-
-- Implement A* search for comparison.
-- Optimize performance further.
-- Add support for different board sizes (e.g., 15-puzzle).
-
-## License
-
-This project is licensed under the **MIT License**.
-
