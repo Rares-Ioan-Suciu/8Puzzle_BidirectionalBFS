@@ -22,7 +22,7 @@
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/8Puzzle_BidirectionalBFS.git
+git clone https://github.com/Rares-Ioan-Suciu/8Puzzle_BidirectionalBFS.git
 cd 8Puzzle_BidirectionalBFS
 ```
 
